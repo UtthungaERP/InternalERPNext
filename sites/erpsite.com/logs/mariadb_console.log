@@ -1,8 +1,0 @@
-_HiStOrY_V2_
-mysql\040-u\040root\040-p
-select\040database();
-mysql\040-u\040root\040-p\040select\040database();
-SELECT\040DATABASE();
-SHOW\040DATABASES;
-USE\040_2a67c5a786bd6403
-EXIT;
