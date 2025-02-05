@@ -1,0 +1,6 @@
+set -o pipefail; /usr/bin/mariadb-dump --user=_2a67c5a786bd6403 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _2a67c5a786bd6403 | /usr/bin/gzip >> ./erpsite.com/private/backups/20250205_180003-erpsite_com-database.sql.gz
+
+Backup Summary for erpsite.com at 2025-02-05 18:00:06.220031
+Config  : ./erpsite.com/private/backups/20250205_180003-erpsite_com-site_config_backup.json 94.0B
+Database: ./erpsite.com/private/backups/20250205_180003-erpsite_com-database.sql.gz         1.1MiB
+Backup for Site erpsite.com has been successfully completed

@@ -1,0 +1,49 @@
+2025-02-05 16:51:32,915 DEBUG cd frappe-bench && python3.11 -m venv env
+2025-02-05 16:51:42,753 DEBUG cd frappe-bench && /home/aarav/frappe-bench/env/bin/python -m pip install --quiet --upgrade pip
+2025-02-05 16:51:47,925 DEBUG cd frappe-bench && /home/aarav/frappe-bench/env/bin/python -m pip install --quiet wheel
+2025-02-05 16:51:50,552 LOG Getting frappe
+2025-02-05 16:51:50,552 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git --branch version-15 --depth 1 --origin upstream
+2025-02-05 16:52:03,385 LOG Installing frappe
+2025-02-05 16:52:03,388 DEBUG cd /home/aarav/frappe-bench && /home/aarav/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/aarav/frappe-bench/apps/frappe 
+2025-02-05 16:56:03,191 DEBUG cd /home/aarav/frappe-bench/apps/frappe && yarn install --check-files
+2025-02-05 16:57:53,688 WARNING restart failed: Couldn't find supervisorctl in PATH
+2025-02-05 16:57:53,689 DEBUG cd frappe-bench && bench build
+2025-02-05 16:57:54,048 INFO /usr/local/bin/bench build
+2025-02-05 16:58:37,021 LOG setting up backups
+2025-02-05 16:58:37,039 LOG backups were set up
+2025-02-05 16:58:37,039 INFO Bench frappe-bench initialized
+2025-02-05 16:59:53,752 INFO /usr/local/bin/bench start
+2025-02-05 16:59:55,907 INFO /usr/local/bin/bench schedule
+2025-02-05 16:59:56,056 INFO /usr/local/bin/bench serve --port 8000
+2025-02-05 16:59:56,252 INFO /usr/local/bin/bench watch
+2025-02-05 16:59:56,257 INFO /usr/local/bin/bench worker
+2025-02-05 17:00:35,130 INFO /usr/local/bin/bench new-site erpsite.com
+2025-02-05 17:03:44,032 INFO /usr/local/bin/bench --site erpsite.com add-to-hosts
+2025-02-05 17:04:11,936 INFO /usr/local/bin/bench start
+2025-02-05 17:04:13,539 INFO /usr/local/bin/bench schedule
+2025-02-05 17:04:13,546 INFO /usr/local/bin/bench serve --port 8000
+2025-02-05 17:04:13,573 INFO /usr/local/bin/bench worker
+2025-02-05 17:04:13,705 INFO /usr/local/bin/bench watch
+2025-02-05 17:04:47,268 INFO /usr/local/bin/bench --site erpsite.com migrate
+2025-02-05 17:05:22,733 INFO /usr/local/bin/bench get-app erpnext --branch version-15
+2025-02-05 17:05:25,516 LOG Getting erpnext
+2025-02-05 17:05:25,518 DEBUG cd ./apps && git clone https://github.com/frappe/erpnext.git --branch version-15 --depth 1 --origin upstream
+2025-02-05 17:05:40,136 LOG Installing erpnext
+2025-02-05 17:05:40,136 DEBUG cd /home/aarav/frappe-bench && /home/aarav/frappe-bench/env/bin/python -m pip install --quiet --upgrade -e /home/aarav/frappe-bench/apps/erpnext 
+2025-02-05 17:07:11,195 DEBUG cd /home/aarav/frappe-bench/apps/erpnext && yarn install --check-files
+2025-02-05 17:07:14,150 DEBUG bench build --app erpnext
+2025-02-05 17:07:14,928 INFO /usr/local/bin/bench build --app erpnext
+2025-02-05 17:07:27,153 WARNING restart failed: Couldn't find supervisorctl in PATH
+2025-02-05 17:30:04,008 INFO /usr/local/bin/bench start
+2025-02-05 17:30:05,481 INFO /usr/local/bin/bench watch
+2025-02-05 17:30:05,564 INFO /usr/local/bin/bench worker
+2025-02-05 17:30:05,646 INFO /usr/local/bin/bench serve --port 8000
+2025-02-05 17:30:05,652 INFO /usr/local/bin/bench schedule
+2025-02-05 17:30:53,835 INFO /usr/local/bin/bench --site erpsite.com install-app erpnext
+2025-02-05 17:38:53,630 INFO /usr/local/bin/bench --site erpsite.com migrate
+2025-02-05 17:48:52,563 INFO /usr/local/bin/bench start
+2025-02-05 17:48:55,705 INFO /usr/local/bin/bench watch
+2025-02-05 17:48:56,259 INFO /usr/local/bin/bench worker
+2025-02-05 17:48:56,440 INFO /usr/local/bin/bench serve --port 8000
+2025-02-05 17:48:56,775 INFO /usr/local/bin/bench schedule
+2025-02-05 18:00:02,239 INFO /usr/local/bin/bench --verbose --site all backup

@@ -1,0 +1,34 @@
+2025-02-05 17:00:59,870 ERROR scheduler Exception in Enqueue Events for Site erpsite.com
+Traceback (most recent call last):
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 80, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 124, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/utils/scheduler.py", line 137, in is_scheduler_disabled
+    frappe.db.get_single_value("System Settings", "enable_scheduler")
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/database/database.py", line 840, in get_single_value
+    df = frappe.get_meta(doctype).get_field(fieldname)
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/__init__.py", line 1318, in get_meta
+    return frappe.model.meta.get_meta(doctype, cached=cached)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/model/meta.py", line 68, in get_meta
+    meta = Meta(doctype)
+           ^^^^^^^^^^^^^
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/model/meta.py", line 122, in __init__
+    super().__init__("DocType", doctype)
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/model/document.py", line 126, in __init__
+    self.load_from_db()
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/model/meta.py", line 128, in load_from_db
+    super().load_from_db()
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/model/document.py", line 172, in load_from_db
+    frappe.throw(
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/__init__.py", line 603, in throw
+    msgprint(
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/__init__.py", line 568, in msgprint
+    _raise_exception()
+  File "/home/aarav/frappe-bench/apps/frappe/frappe/__init__.py", line 519, in _raise_exception
+    raise exc
+frappe.exceptions.DoesNotExistError: DocType System Settings not found
