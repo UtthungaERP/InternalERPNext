@@ -4,7 +4,7 @@ app_publisher = "Aarav"
 app_description = "Custom App for Integrations"
 app_email = "aarav.s@utthunga.com"
 app_license = "mit"
-api_path = "utthunga_integrations.utthunga_integrations.erpnext_to_jira.sync_erpnext_projects_to_jira"
+api_path = "utthunga_integrations.erpnext_to_jira.sync_erpnext_projects_to_jira"
 
 # Apps
 # ------------------
