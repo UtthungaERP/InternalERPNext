@@ -8,7 +8,6 @@ def test_jira_webhook():
         frappe.log_error("Webhook Triggered!",data)
     except Exception as e:
         frappe.log_error("Webhook Failed!",frappe.get_traceback())
-'''
 
 import frappe
 
@@ -55,4 +54,3 @@ def jira_webhook():
         frappe.log_error("Jira Webhook Error", frappe.get_traceback())
         return {"status": "error", "message": "Failed to process Jira webhook"}
 
-'''
