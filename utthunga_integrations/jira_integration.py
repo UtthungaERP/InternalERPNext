@@ -10,7 +10,6 @@ def test_jira_webhook():
         frappe.log_error("Webhook Failed!",frappe.get_traceback())
 '''
 
-'''
 import frappe
 
 @frappe.whitelist(allow_guest=True)
@@ -22,8 +21,8 @@ def test_jira_webhook():
     except Exception as e:
         frappe.log_error("Webhook Failed!", frappe.get_traceback())
         return {"status": "error", "message": "Webhook processing failed"}
-'''
 
+'''
 import frappe
 import json
 
@@ -56,4 +55,4 @@ def jira_webhook():
         frappe.log_error("Jira Webhook Error", frappe.get_traceback())
         return {"status": "error", "message": "Failed to process Jira webhook"}
 
-
+'''
