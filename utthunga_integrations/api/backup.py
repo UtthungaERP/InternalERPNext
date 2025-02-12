@@ -4,7 +4,6 @@ from frappe import _
 
 @frappe.whitelist()
 def trigger_backup():
-    """Trigger a manual backup via API"""
     try:
         scheduled_backup(ignore_files=False)
         return {"status": "success", "message": _("Backup triggered successfully.")}
