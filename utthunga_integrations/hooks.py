@@ -8,6 +8,8 @@ api_path = "utthunga_integrations.erpnext_to_jira.sync_erpnext_projects_to_jira"
 
 api_routes = [{"method": "POST", "path": "utthunga_integrations.api.backup.trigger_backup", "handler": "utthunga_integrations.api.backup.trigger_backup"},]
 
+page_js = {"burndown-chart": "public/js/burndown_chart.js"}
+
 # Apps
 # ------------------
 
