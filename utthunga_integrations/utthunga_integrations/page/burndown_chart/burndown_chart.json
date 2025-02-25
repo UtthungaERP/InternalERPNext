@@ -1,0 +1,9 @@
+{
+    "doctype": "Page",
+    "name": "burndown-chart",
+    "module": "Utthunga Integrations",
+    "label": "Sprint Burndown Chart",
+    "custom": 1,
+    "is_standard": 0,
+    "route": "burndown-chart"
+}
