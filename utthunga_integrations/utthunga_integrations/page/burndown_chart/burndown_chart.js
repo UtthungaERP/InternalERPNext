@@ -1,27 +1,21 @@
 frappe.pages['burndown-chart'].on_page_load = function(wrapper) {
     // Create the page layout
     var page = frappe.ui.make_app_page({
-    parent: wrapper,
-    title: 'Sprint Burndown Chart',
-    single_column: true
+    parent: wrapper,title: 'Sprint Burndown Chart',single_column: true
     });
     
     // Insert a canvas element into the page for Chart.js to draw the chart
     $(wrapper).find('.layout-main-section').html('<canvas id="burndownChart" style="height:400px;"></canvas>');
     
     // Load Chart.js and then render the chart
-    frappe.require([
-        "https://cdn.jsdelivr.net/npm/chart.js"
-    ], function() {
-        renderBurndownChart('burndownChart');
+    frappe.require(["https://cdn.jsdelivr.net/npm/chart.js"], function() {renderBurndownChart('burndownChart');
     });
-    
+        
     };
     
     function renderBurndownChart(chartId) {
     // Sample Data: Days and Remaining Work (Story Points)
-    var data = {
-    labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], // Sprint Days
+    var data = {labels: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], // Sprint Days
     datasets: [
     {
     label: 'Actual Work Remaining',
@@ -81,5 +75,4 @@ frappe.pages['burndown-chart'].on_page_load = function(wrapper) {
     if (ctx) {
         new Chart(ctx, config);
     }
-    
     }    
