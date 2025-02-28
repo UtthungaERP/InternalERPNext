@@ -5,5 +5,11 @@
     "label": "Sprint Burndown Chart",
     "custom": 1,
     "is_standard": 0,
-    "route": "burndown-chart"
-}
+    "route": "burndown-chart",
+    "script": "burndown_chart.js",
+    "style": "",
+    "content": "",
+    "icon": "octicon octicon-graph",
+    "parent_page": "",
+    "standard": "No"
+    }
