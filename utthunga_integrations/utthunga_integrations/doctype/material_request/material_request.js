@@ -18,9 +18,9 @@ frappe.ui.form.on("Material Request", {
     
 function scrub(str) {
     let field_map = {
-        "Project Manager": "project_manager",
+        "Project Manager": "custom_project_manager",
         "BU Head": "custom_bu_head",
-        "Purchase Manager": "purchase_manager"
+        "Purchase Manager": "custom_purchase_manager"
     };
     return field_map[str] || str.toLowerCase().replace(/\s+/g,"_");
     
@@ -68,8 +68,8 @@ function assignment_btn(frm, assignment_type, user_field) {
                     }
                 },
                 {
-                    label: `${user}`,
-                    fieldname: `${scrub(user)}`,
+                    label: `${emp}`,
+                    fieldname: scrub(emp),
                     fieldtype: "Link",
                     options: "User",
                     read_only: 1,
