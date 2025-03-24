@@ -52,7 +52,7 @@ function assignment_btn(frm, assignment_type, user_field) {
                         };
                     },
                     onchange: function () {
-                        let employee_value = d.get_value(`${scrub(emp)}`);
+                        let employee_value = d.get_value(scrub(emp));
                         if (employee_value) {
                             frappe.call({
                                 doc: frm.doc,
