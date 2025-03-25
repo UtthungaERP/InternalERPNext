@@ -1,11 +1,10 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-03-17 17:23:10.339080",
+ "creation": "2025-03-25 17:23:10.339080",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "workflow_state",
   "type_section",
   "naming_series",
   "title",
@@ -21,14 +20,12 @@
   "scan_barcode",
   "column_break_13",
   "set_from_warehouse",
-  "column_break5",
   "set_warehouse",
   "items_section",
   "items",
   "items_tab",
   "terms_section_break",
   "tc_name",
-  "terms",
   "more_info_tab",
   "status_section",
   "status",
@@ -51,18 +48,10 @@
   "custom_bu_head",
   "custom_bu_head_id",
   "custom_purchase_manager",
-  "custom_purchase_manager_id"
+  "custom_purchase_manager_id",
+  "column_break_5"
  ],
  "fields": [
-  {
-   "label": "Workflow State",
-   "fieldname": "workflow_state",
-   "fieldtype": "Link",
-   "options": "Workflow State",
-   "no_copy": "1",
-   "allow_on_submit": "1",
-   "hidden": "1"
-  },
   {
     "fieldname":"type_section",
     "fieldtype": "Section Break",
@@ -182,12 +171,6 @@
     "depends_on": "eval:doc.material_request_type == \"Material Transfer\""
   },
   {
-    "fieldname" :"column_break_5",
-    "fieldtype" : "Column Break",
-    "print_width": "50%",
-    "width": "50%"
-  },
-  {
     "fieldname" :"set_warehouse",
     "fieldtype" : "Link",
     "label": "Set Target Warehouse",
@@ -269,7 +252,7 @@
     "fieldname": "per_received",
     "fieldtype": "Percent",
     "label": "% Received",
-    "no_copy": "1",
+    "no_copy": "1", 
     "depends_on": "eval:doc.per_received > 0",
     "read_only": "1",
     "print_hide": "1"
@@ -341,9 +324,11 @@
     "label": "Project Manager",
     "options": "Employee",
     "ignore_user_permissions": "1",
-    "read_only": "1"
+    "read_only": "1",
+    "depends_on": "eval:doc.workflow_state == \"Draft\""
   },
   {
+    "fetch_from": "custom_project_manager.user_id",
     "fieldname" :"custom_project_manager_id",
     "fieldtype" : "Link",
     "label": "Project Manager Id",
@@ -359,6 +344,7 @@
     "read_only": "1"
   },
   {
+    "fetch_from": "custom_bu_head.user_id",
     "fieldname" :"custom_bu_head_id",
     "fieldtype" : "Link",
     "label": "BU Head Id",
@@ -366,6 +352,7 @@
     "hidden": "1"
   },
   {
+    "fetch_from": "custom_purchase_manager.user_id",
     "fieldname" :"custom_purchase_manager",
     "fieldtype" : "Link",
     "label": "Purchase Manager",
@@ -379,6 +366,12 @@
     "label": "Purchase Manager Id",
     "options": "User",
     "hidden": "1"
+  },
+  {
+    "fieldname" :"column_break_5",
+    "fieldtype" : "Column Break",
+    "print_width": "50%",
+    "width": "50%"
   }
  ],
 "index_web_pages_for_search": 1,
