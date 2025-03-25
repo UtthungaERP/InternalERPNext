@@ -5,7 +5,7 @@ from frappe.desk.form.assign_to import add
 class MaterialRequest(Document):
     def validate(self):
         if ((self.custom_project_manager) and (not self.custom_project_manager_id)):
-            self.custom_project_manager_id = frappe.db.get_value("Employee", {'name': self.custom_project_manager}, 'user_id')
+            self.custom_project_manager_id = frappe.db.get_value("Employee",{'name': self.custom_project_manager}, 'user_id')
         if ((self.custom_bu_head) and (not self.custom_bu_head_id)):
             self.custom_bu_head_id = frappe.db.get_value("Employee", {'name': self.custom_bu_head}, 'user_id')
         if ((self.custom_purchase_manager) and (not self.custom_purchase_manager_id)):
