@@ -47,7 +47,7 @@ function assignment_btn(frm, assignment_type, user_field) {
                             "Purchase Manager": "Purchase Manager"
                         };
                         return {
-                            query: "utthunga_integrations.utthunga_integrations.doctype.material_request.material_request.get_filtered_employees",
+                            query: "utthunga_integrations.utthunga_integrations.utthunga_integrations.doctype.material_request.material_request.get_filtered_employees",
                             filters: { role: role_map[assignment_type] }
                         };
                     },
